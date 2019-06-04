@@ -10,16 +10,16 @@ cursor = cnxn.cursor()
 sql = "Select sum(CYTM), sum(PYTM), BRAND From data Group By BRAND"
 
 #get questions by topic
-sql = "Select questionID, question From student_practice where Topic_Code is topic"
+sql = "Select question_ID, question From student_practice where Topic_Code is topic order by question_ID"
 
 #get answers by topic
-sql = "Select question, correct_answer, explanation From student_practice where Topic_Code is topic"
+sql = "Select question, correct_answer, explanation From student_practice where Topic_Code is topic order by question_ID"
 
 #get questions by difficulty
-sql = "Select questionID, question From student_practice where Difficulty is difficulty"
+sql = "Select question_ID, question From student_practice where Difficulty is difficulty order by question_ID"
 
 #get answers by difficulty
-sql = "Select question, correct_answer, explanation From student_practice where Difficulty is difficulty"
+sql = "Select question, correct_answer, explanation From student_practice where Difficulty is difficulty order by question_ID"
 
 #score tests. Takes 'submitted' parameter, which is a list of tuples: ([(subMittedanswer, correctAnswer)])
 
